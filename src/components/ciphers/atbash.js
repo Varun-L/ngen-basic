@@ -1,4 +1,4 @@
-import { Row, Col } from 'antd';
+import { Row } from 'antd';
 import React, { useState } from 'react';
 import SmoothTextInput from '../ui/SmoothText';
 
