@@ -13,7 +13,6 @@ import BinaryEncoding from "./components/ciphers/binary";
 import OctalEncoding from "./components/ciphers/octal";
 import HexadecimalEncoding from "./components/ciphers/hexadecimal";
 
-
 const {Content, Footer } = Layout;
 const {Title} = Typography;
 
