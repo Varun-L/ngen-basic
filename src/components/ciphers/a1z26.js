@@ -1,12 +1,7 @@
-
-import { Row} from 'antd';
-import React, { useState } from 'react';
-import SmoothTextInput from '../ui/SmoothText';
+import React from 'react';
+import CipherFactory from '../ui/EncryptDecrypt'
 
 export default function A1Z26Cipher() {
-    const [leftText, setLeftText] = useState('');
-    const [rightText, setRightText] = useState('');
-
     function encode(str) {
         var result = '';
         for (var i = 0; i < str.length; i++) {
@@ -25,36 +20,6 @@ export default function A1Z26Cipher() {
         return result;
       }
       
+      return <CipherFactory encode={encode} decode={decode} />
 
-    const handleLeftTextChange = (event) => {
-        console.log("Handle Left Text Change");
-        setLeftText(event.target.value);
-        setRightText(encode(event.target.value));
-    };
-
-    const handleRightTextChange = (event) => {
-        console.log("Handle Right Text Change");
-        setRightText(event.target.value);
-        setLeftText(decode(event.target.value));
-    };
-
-    return (
-        <>
-        <Row style={{display:'flex'}}>
-                <SmoothTextInput
-                    value={leftText}
-                    isLeft={true}
-                    onChange={handleLeftTextChange}
-                    placeholder="Enter text to Encrypt"
-                />
-                <SmoothTextInput
-                    value={rightText}
-                    isLeft={false}
-                    onChange={handleRightTextChange}
-                    placeholder="Enter text to Decrypt"
-                />
-        </Row>
-        </>
-        
-    );
 };

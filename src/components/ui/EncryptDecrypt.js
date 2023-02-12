@@ -4,10 +4,12 @@ import SmoothTextInput from './SmoothText';
 
 /**
  * 
- * @param {encode,decode} props 
+ * @param {Function} encode 
+ * @param {Function} decode 
+ * @param {number} keyComponent 
  * @returns 
  */
-export default function CipherFactory(props) {
+export default function CipherFactory({encode, decode, keyComponent}) {
     const [leftText, setLeftText] = useState('');
     const [rightText, setRightText] = useState('');
     const [shift, setShift] = useState(0);
@@ -16,18 +18,18 @@ export default function CipherFactory(props) {
     const handleLeftTextChange = (event) => {
         console.log("Handle Left Text Change");
         setLeftText(event.target.value);
-        setRightText(props.encode(event.target.value, shift));
+        setRightText(encode(event.target.value, shift));
     };
 
     const handleRightTextChange = (event) => {
         console.log("Handle Right Text Change");
         setRightText(event.target.value);
-        setLeftText(props.decode(event.target.value, shift));
+        setLeftText(decode(event.target.value, shift));
     };
 
     return (
         <>
-           { props.key  && <Row style={{ display: 'flex', padding:'10px' }}>
+           { keyComponent  && <Row style={{ display: 'flex', padding:'10px' }}>
 
                 <InputNumber
                     style={{ flex: 0.5 }}
