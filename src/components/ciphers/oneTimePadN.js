@@ -1,15 +1,15 @@
 import React from 'react';
 import CipherFactory from '../ui/EncryptDecrypt';
 
-export default function OneTimePadEnc() {
+export default function OneTimePadEncN() {
 
   function encode(msg, key) {
     if (msg < 0 || key < 0) {
       throw new Error('Message and key must be non-negative integers.');
     }
   
-    const msgStr = msg.toString(2);
-    const keyStr = key.toString(2);
+    const msgStr = Number(msg).toString(2);
+    const keyStr = Number(key).toString(2);
     const padLength = Math.max(msgStr.length, keyStr.length);
     const paddedMsg = msgStr.padStart(padLength, '0');
     const paddedKey = keyStr.padStart(padLength, '0');
