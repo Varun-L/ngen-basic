@@ -17,7 +17,7 @@ function encode(str) {
     var result = '';
     var elements = str.split('-');
     for (var i = 0; i < elements.length; i++) {
-      result += String.fromCharCode(parseInt(elements[i]));
+      result += String.fromCharCode(elements[i]);
     }
     return result;
   }      

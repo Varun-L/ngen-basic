@@ -12,6 +12,9 @@ import MorseCode from "./components/ciphers/morse";
 import BinaryEncoding from "./components/ciphers/binary";
 import OctalEncoding from "./components/ciphers/octal";
 import HexadecimalEncoding from "./components/ciphers/hexadecimal";
+import Base64Encoding from "./components/ciphers/b64";
+import OneTimePadEnc from "./components/ciphers/oneTimePad";
+import AffineCipher from "./components/ciphers/affine";
 
 const {Content, Footer } = Layout;
 const {Title} = Typography;
@@ -28,6 +31,9 @@ const items=[['Caesar Cipher', <CaesarCipher />],
 ['Binary Conversion', <BinaryEncoding />],
 ['Octal Conversion', <OctalEncoding />],
 ['Hexa Decimal Conversion', <HexadecimalEncoding />],
+['Base64 Encoding', <Base64Encoding />],
+['One time Pad Encoding', <OneTimePadEnc />],
+['Affine Cipher', <AffineCipher />],
 ]
   
   const [current, setCurrent] = React.useState('');
@@ -38,14 +44,6 @@ const items=[['Caesar Cipher', <CaesarCipher />],
     console.log('click ', e);
     setCurrent(e.key);
     let k = Number(e.key);
-    // let comp, title;
-    // switch(e.key){
-    //   case 'c': comp = <CaesarCipher />; title='Caesar Cipher'; break;
-    //   case 'b': comp = <Base64Converter />; break;
-    //   case 'm': comp = <ArithmeticQuiz  duration={300000} />; break;
-    //   case 'a': comp = <AtbashCipher />; title='Atbash Cipher';  break;
-    //   default: comp = <> ICY LABS Exploded. </>; title=''; 
-    // }
     setComp(items[k][1]); setTitle(items[k][0]);
   };
 

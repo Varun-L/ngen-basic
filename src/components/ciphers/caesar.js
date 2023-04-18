@@ -42,6 +42,6 @@ export default function CaesarCipher(props) {
 
 
 
-    return <CipherFactory encode={encode} decode={decode} keyComponent={1} />
+    return <CipherFactory encode={encode} decode={decode} keyComponentA={1} />
 };
 
