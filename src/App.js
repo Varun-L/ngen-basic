@@ -21,6 +21,17 @@ import AffineCipher from "./components/ciphers/affine";
 import BinaryEncodedDecimalN from './components/ciphers/bcd';
 import GrayCode from './components/ciphers/gray';
 import UrlEncodingDecoding from './components/ciphers/urled';
+import BaconianCipher from './components/ciphers/baconian';
+import BinHexN from './components/ciphers/binHexN';
+import BinOctN from './components/ciphers/binOctN';
+import HexOctN from './components/ciphers/hexOctN';
+import LatinAlphabetCipher from './components/ciphers/latinAlphabet';
+import Scytale from './components/ciphers/scytale';
+import PigPen from './components/ciphers/pigpen'
+import ReverseCode from './components/ciphers/reverseCode'
+import RotationCipher from './components/ciphers/rotationCipher'
+import RomanCode from './components/ciphers/romanCode'
+
 
 const {Content, Footer } = Layout;
 const {Title} = Typography;
@@ -41,11 +52,23 @@ const items=[
 ['One time Pad Encoding', <OneTimePadEncN />],
 ['Affine Cipher', <AffineCipher />],
 ['BCD', <BinaryEncodedDecimalN />],
-['Bnary Numbers', <BinaryEncodingN />],
+['Binary Numbers', <BinaryEncodingN />],
 ['Octal Numbers', <OctalEncodingN />],
 ['Hexadecimal Numbers', <HexadecimalEncodingN />],
 ['Gray Code', <GrayCode />],
 ['URL Encoding and Decoding', <UrlEncodingDecoding />],
+//Added on 20 April
+['Baconian Cipher', <BaconianCipher />],
+['Bin2Hex Numbers', <BinHexN />],
+['Bin2Oct Numbers', <BinOctN />],
+['Hex2Oct Numbers', <HexOctN />],
+['Latin Alphabet Cipher', <LatinAlphabetCipher />],
+['PigPen Cipher', <PigPen />],
+['Reverse Code', <ReverseCode />],
+['Rotation Cipher', <RotationCipher />],
+['Roman Code', <RomanCode />],
+['Scytale Cipher', <Scytale />],
+//Pending Add Polybius
 ]
   
   const [current, setCurrent] = React.useState('');
