@@ -27,7 +27,7 @@ export default function AffineCipher() {
         // Find the modular multiplicative inverse of a
         let aInverse = -1;
         for (let i = 0; i < 26; i++) {
-            if ((i * a) % 26 == 1) {
+            if ((i * a) % 26 === 1) {
                 aInverse = i;
                 break;
             }
