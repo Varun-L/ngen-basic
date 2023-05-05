@@ -42,7 +42,7 @@ export default function CipherFactory({ encode, decode, keyComponentA, keyCompon
                 <Row style={{ display: 'flex', padding: '10px 10px 10px 0px' }}>
                     {
                         (keyComponentA == 'STR') ? <Input style={{ flex: 0.5 }} addonAfter="Cipher Key A:" placeholder='SecretKey' value={shift1} size='large' onChange={setKey1} />
-                            : <InputNumber style={{ flex: 0.3 }} addonBefore="Cipher Key A:" placeholder="Shift value" value={shift1} size='large' onChange={setKey1} />
+                            : <InputNumber style={{ flex: 0.4 }} addonBefore="Cipher Key A:" placeholder="Shift value" value={shift1} size='large' onChange={setKey1} />
                     }
                 </Row>
             }
@@ -50,7 +50,7 @@ export default function CipherFactory({ encode, decode, keyComponentA, keyCompon
                 <Row style={{ display: 'flex', padding: '10px 10px 10px 0px' }}>
                     {
                         (keyComponentB == 'STR') ? <Input style={{ flex: 0.5 }} addonAfter="Cipher Key B:" placeholder='SecretKey' value={shift2} size='large' onChange={setKey2} />
-                            : <InputNumber style={{ flex: 0.3 }} addonBefore="Cipher Key B:" placeholder="Shift value" value={shift2} size='large' onChange={setKey2} />
+                            : <InputNumber style={{ flex: 0.4 }} addonBefore="Cipher Key B:" placeholder="Shift value" value={shift2} size='large' onChange={setKey2} />
                     }
                 </Row>
             }

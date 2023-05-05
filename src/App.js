@@ -1,7 +1,7 @@
 // import ArithmeticQuiz from "./components/MathQuiz"
 // import Base64Converter from "./components/base64conv"
 import React from 'react';
-import { Layout, Menu, Typography, Watermark } from 'antd';
+import { Layout, Menu, Typography, Watermark, Spin } from 'antd';
 import lodash from 'lodash'
 import AtbashCipher from "./components/ciphers/atbash";
 import CaesarCipher from "./components/ciphers/caesar";
@@ -31,7 +31,7 @@ import RotationCipher from './components/ciphers/rotationCipher'
 import RomanCode from './components/ciphers/romanCode'
 
 
-const { Content, Footer } = Layout;
+const { Content, Footer, Header } = Layout;
 const { Title } = Typography;
 
 const App = () => {
@@ -55,7 +55,6 @@ const App = () => {
     ['Dec 2 Hexadecimal', <DecimalEncodingN num={16} />],
     ['Gray Code', <GrayCode />],
     ['URL Encoding and Decoding', <UrlEncodingDecoding />],
-    //Added on 20 April
     ['Baconian Cipher', <BaconianCipher />],
     ['Bin2Hex Numbers', <BinHexN />],
     ['Bin2Oct Numbers', <BinOctN />],
@@ -66,7 +65,6 @@ const App = () => {
     ['Rotation Cipher', <RotationCipher />],
     ['Roman Code', <RomanCode />],
     ['Scytale Cipher', <Scytale />],
-    //Pending Add Polybius
   ]
 
   const [current, setCurrent] = React.useState('');
@@ -81,6 +79,7 @@ const App = () => {
 
   return (
     <Layout >
+      <Header style={{textAlign: 'center',color: '#fff', fontSize: 16}}> EN | CRYPTO | DE  <Spin /> PlayGround </Header>
       <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items.map((ele, index) => ({ label: ele[0], key: index }))} />
       <Watermark content="ICY Labs">
         <Content style={{ padding: '50px' }}>
