@@ -31,7 +31,7 @@ import PigPen from './components/ciphers/pigpen'
 import ReverseCode from './components/ciphers/reverseCode'
 import RotationCipher from './components/ciphers/rotationCipher'
 import RomanCode from './components/ciphers/romanCode'
-
+import Vigenere from './components/ciphers/vigenere'
 
 const { Content, Footer, Header } = Layout;
 const { Title } = Typography;
@@ -53,6 +53,7 @@ const App = () => {
     ['Rot13 Cipher', <Rot13Encoder />],
     ['A1Z26 Cipher', <A1Z26Cipher />],
     ['A0Z25 Cipher', <A0Z25Cipher />],
+    ['Vigenere Cipher', <Vigenere />],
     ['ASCII Cipher', <AsciiCipher />],
     ['Morse Code', <MorseCode />],
     ['Binary Conversion', <BinaryEncoding />],
