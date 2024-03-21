@@ -1,13 +1,15 @@
 // import ArithmeticQuiz from "./components/MathQuiz"
 // import Base64Converter from "./components/base64conv"
-import React from 'react';
-import { Layout, Menu, Typography, Watermark, Spin } from 'antd';
+import React, { useState } from "react";
+import { Layout, Menu, Typography, Watermark, Spin, Input, Button } from 'antd';
+import { EyeOutlined } from '@ant-design/icons';
 import lodash from 'lodash'
 import AtbashCipher from "./components/ciphers/atbash";
 import CaesarCipher from "./components/ciphers/caesar";
 import Rot13Encoder from "./components/ciphers/rot13";
 import AsciiCipher from "./components/ciphers/ascii";
 import A1Z26Cipher from "./components/ciphers/a1z26";
+import A0Z25Cipher from "./components/ciphers/a0z25";
 import MorseCode from "./components/ciphers/morse";
 import BinaryEncoding from "./components/ciphers/binary";
 import OctalEncoding from "./components/ciphers/octal";
@@ -35,12 +37,22 @@ const { Content, Footer, Header } = Layout;
 const { Title } = Typography;
 
 const App = () => {
-
+  const [isVerified, setIsVerified] = useState(false);
+  const checkPw = () => {
+    const answer = document.getElementById("password").value;
+  
+    if (answer === "I_KNOW_YOU") { 
+      setIsVerified(true);
+    } else {
+      alert("Sorry, that's not it");
+    }
+  };
   const items = [
     ['Caesar Cipher', <CaesarCipher />],
     ['Atbash Cipher', <AtbashCipher />],
     ['Rot13 Cipher', <Rot13Encoder />],
     ['A1Z26 Cipher', <A1Z26Cipher />],
+    ['A0Z25 Cipher', <A0Z25Cipher />],
     ['ASCII Cipher', <AsciiCipher />],
     ['Morse Code', <MorseCode />],
     ['Binary Conversion', <BinaryEncoding />],
@@ -78,19 +90,30 @@ const App = () => {
   };
 
   return (
-    <Layout >
-      <Header style={{textAlign: 'center',color: '#fff', fontSize: 16}}> EN | CRYPTO | DE  <Spin /> PlayGround </Header>
-      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items.map((ele, index) => ({ label: ele[0], key: index }))} />
-      <Watermark content="ICY Labs">
-        <Content style={{ padding: '50px' }}>
-          <Title style={{ textAlign: 'center' }} underline level={1} type={lodash.sample(['danger', 'success', 'warning'])} >{title}</Title>
-          <div>
-            {comp}
-          </div>
-        </Content>
-        <Footer style={{ textAlign: 'center' }}> - with Love from ZBST</Footer>
-      </Watermark>
-    </Layout>
+    <>
+    {isVerified ? 
+   (<Layout >
+    <Header style={{textAlign: 'center',color: '#fff', fontSize: 16}}> EN | CRYPTO | DE  <Spin /> PlayGround </Header>
+    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items.map((ele, index) => ({ label: ele[0], key: index }))} />
+    <Watermark content="ICY Labs">
+      <Content style={{ padding: '50px' }}>
+        <Title style={{ textAlign: 'center' }} underline level={1} type={lodash.sample(['danger', 'success', 'warning'])} >{title}</Title>
+        <div>
+          {comp}
+        </div>
+      </Content>
+      <Footer style={{ textAlign: 'center' }}> - with Love from ZBST</Footer>
+    </Watermark>
+  </Layout>)
+  :     (
+    <div>
+    <Input.Password id="password" name="password" size="large" placeholder="Enter password" prefix={<EyeOutlined />} />
+    <Button type="primary" onClick={checkPw}>Open Lock</Button>
+    </div>
+  )
+  }
+    </>
+
   );
 };
 
