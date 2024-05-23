@@ -92,6 +92,32 @@ const App = () => {
 
   return (
     <>
+     <Layout >
+    <Header style={{textAlign: 'center',color: '#fff', fontSize: 16}}> EN | CRYPTO | DE  <Spin /> PlayGround </Header>
+    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items.map((ele, index) => ({ label: ele[0], key: index }))} />
+    <Watermark content="ICY Labs">
+      <Content style={{ padding: '50px' }}>
+        <Title style={{ textAlign: 'center' }} underline level={1} type={lodash.sample(['danger', 'success', 'warning'])} >{title}</Title>
+        <div>
+          {comp}
+        </div>
+      </Content>
+      <Footer style={{ textAlign: 'center' }}> - with Love from ZBST</Footer>
+    </Watermark>
+  </Layout>
+    </>
+
+  );
+};
+
+
+
+
+export default App;
+
+
+/**
+
     // {isVerified ? 
    // (
      <Layout >
@@ -115,11 +141,5 @@ const App = () => {
   //   </div>
   // )
   // }
-    </>
 
-  );
-};
-
-
-export default App;
-
+ */
