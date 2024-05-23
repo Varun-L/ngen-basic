@@ -38,15 +38,15 @@ const { Title } = Typography;
 
 const App = () => {
   const [isVerified, setIsVerified] = useState(false);
-  const checkPw = () => {
-    const answer = document.getElementById("password").value;
+  // const checkPw = () => {
+  //   const answer = document.getElementById("password").value;
   
-    if (answer === "I_KNOW_YOU") { 
-      setIsVerified(true);
-    } else {
-      alert("Sorry, that's not it");
-    }
-  };
+  //   if (answer === "I_KNOW_YOU") { 
+  //     setIsVerified(true);
+  //   } else {
+  //     alert("Sorry, that's not it");
+  //   }
+  // };
   const items = [
     ['Caesar Cipher', <CaesarCipher />],
     ['Atbash Cipher', <AtbashCipher />],
@@ -92,8 +92,9 @@ const App = () => {
 
   return (
     <>
-    {isVerified ? 
-   (<Layout >
+    // {isVerified ? 
+   // (
+     <Layout >
     <Header style={{textAlign: 'center',color: '#fff', fontSize: 16}}> EN | CRYPTO | DE  <Spin /> PlayGround </Header>
     <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items.map((ele, index) => ({ label: ele[0], key: index }))} />
     <Watermark content="ICY Labs">
@@ -105,14 +106,15 @@ const App = () => {
       </Content>
       <Footer style={{ textAlign: 'center' }}> - with Love from ZBST</Footer>
     </Watermark>
-  </Layout>)
-  :     (
-    <div>
-    <Input.Password id="password" name="password" size="large" placeholder="Enter password" prefix={<EyeOutlined />} />
-    <Button type="primary" onClick={checkPw}>Open Lock</Button>
-    </div>
-  )
-  }
+  </Layout>
+    // )
+  // :     (
+  //   <div>
+  //   <Input.Password id="password" name="password" size="large" placeholder="Enter password" prefix={<EyeOutlined />} />
+  //   <Button type="primary" onClick={checkPw}>Open Lock</Button>
+  //   </div>
+  // )
+  // }
     </>
 
   );
