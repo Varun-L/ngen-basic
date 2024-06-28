@@ -1,0 +1,20 @@
+[
+    {
+        "title":"Ceaser Cipher",
+        "description": "The Caesar Cipher technique is one of the earliest and simplest methods of encryption technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter with a fixed number of positions down the alphabet.",
+        "example":"Write down the plaintext message: HELLO. Choose a shift value. In this case, we will use a shift of 3. Replace each letter in the plaintext message with the letter that is three positions to the right in the alphabet. H becomes K (shift 3 from H). E becomes H (shift 3 from E). L becomes O (shift 3 from L). L becomes O (shift 3 from L).",
+        "references":["https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/", "https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/"]
+    },
+    {
+        "title":"Atbash Cipher",
+        "description": "The Caesar Cipher technique is one of the earliest and simplest methods of encryption technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter with a fixed number of positions down the alphabet.",
+        "example":"Write down the plaintext message: HELLO\nChoose a shift value.\nIn this case, we will use a shift of 3.\nReplace each letter in the plaintext message with the letter that is three positions to the right in the alphabet. H becomes K (shift 3 from H). E becomes H (shift 3 from E). L becomes O (shift 3 from L). L becomes O (shift 3 from L)",
+        "references":["https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/"]
+    },
+    {
+        "title":"Ascii Cipher",
+        "description": "The shift cipher in the ASCII table is a shift cipher (therefore by substitution), which, as its name suggests, will use the ASCII table as an alphabet.",
+        "example":"Write down the plaintext message: HELLO\nChoose a shift value. In this case, we will use a shift of 3.\nReplace each letter in the plaintext message with the letter that is three positions to the right in the alphabet.\nH becomes K (shift 3 from H)\nE becomes H (shift 3 from E)\nL becomes O (shift 3 from L)\nL becomes O (shift 3 from L)",
+        "references":["https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/"]
+    }
+]
